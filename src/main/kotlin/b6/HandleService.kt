@@ -28,7 +28,13 @@ open class HandleService(serviceListPara : MutableList<Service>) : NameOfOperati
     fun printService() {
         serviceList.forEachIndexed { index, service -> println("${index + 1}. ${service.getNameService()} have price ${service.getMoneyService()} and have amount ${service.getAmountService()}") }
     }
-
+    fun seeService2(index : Int) {
+        for(i in 0 until serviceList.size) {
+            if(index == i) {
+                serviceList[i].informationOfService()
+            }
+        }
+    }
     fun chooseService() : Int {
         var choosing : Int?
         var numEle : Int = -1

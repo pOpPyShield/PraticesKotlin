@@ -151,7 +151,7 @@ class Customer(nameOfCustomer : String?,
         return 1
     }
     private fun String.capitalizeFirstLetter() = this.split(" ").joinToString(" ") {it.capitalize()}.trimEnd()
-    private fun calculateSumOfMoney() : Double {
+    fun calculateSumOfMoney() : Double {
         var doubleCal = 0.0
         for(i in 0 until listOfServiceOfCustomer1.sizeOfService()) {
             doubleCal += listOfServiceOfCustomer1.getServiceList()[i].getMoneyService()!!
@@ -162,5 +162,26 @@ class Customer(nameOfCustomer : String?,
         println("Name customer: $nameOfCustomerInside")
         println("Age customer: $ageOfCustomerInside")
         println("hometown customer: $homeTownOfCustomer")
+    }
+    fun getService() {
+        if(listOfServiceOfCustomer1.sizeOfService() > 0) {
+            for(i in 0 until listOfServiceOfCustomer1.sizeOfService()) {
+                println("Service ${i+1}")
+                listOfServiceOfCustomer1.seeService2(i)
+            }
+        } else {
+            println("Don't have any service here")
+        }
+    }
+    fun getNameCustomer() : String? {
+        return nameOfCustomerInside
+    }
+
+    fun getAgeOfCustomerInside() : Int? {
+        return ageOfCustomerInside
+    }
+
+    fun getHomeTownCustomer() : String? {
+        return homeTownOfCustomer
     }
 }
