@@ -25,6 +25,10 @@ class b2 : NameOfOperation(nameOfOperation = "Count number mod 5"), OperationAnd
         return 1
     }
 
+    override fun getNameOfOperationInsidezzzz(): String {
+        return nameOfOperationInside
+    }
+
     private fun countThis() : Int {
         var countt = 0
         for (i in 0..n) {

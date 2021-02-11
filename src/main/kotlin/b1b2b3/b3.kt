@@ -64,6 +64,11 @@ class b3 : NameOfOperation(nameOfOperation = "Array descending and count odd num
             1
         }
     }
+
+    override fun getNameOfOperationInsidezzzz(): String {
+        return nameOfOperationInside
+    }
+
     private fun countOddNumber() : Int {
         var count = 0
         for(i in 0 until arr.size) {
@@ -75,4 +80,5 @@ class b3 : NameOfOperation(nameOfOperation = "Array descending and count odd num
         return countz
 
     }
+
 }

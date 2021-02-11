@@ -35,6 +35,10 @@ class b1 :  OperationAndInput, NameOfOperation("Caculate factorial of n"){
         return 1
     }
 
+    override fun getNameOfOperationInsidezzzz(): String {
+        return nameOfOperationInside
+    }
+
     private fun calculateFactorial() : Long {
         var Result : Long = 1
         for(i in 1..n!!) {

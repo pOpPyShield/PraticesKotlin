@@ -73,6 +73,11 @@ class Service(nameServicez: String?, moneyz: Double?, amountz: Int ) : NameOfOpe
         }
         return 1
     }
+
+    override fun getNameOfOperationInsidezzzz(): String {
+        return nameOfOperationInside
+    }
+
     fun informationOfService() {
         println("Name service: $nameService")
         println("Money: $money")

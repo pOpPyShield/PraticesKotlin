@@ -150,6 +150,11 @@ class Customer(nameOfCustomer : String?,
         }
         return 1
     }
+
+    override fun getNameOfOperationInsidezzzz(): String {
+        return nameOfOperationInside
+    }
+
     private fun String.capitalizeFirstLetter() = this.split(" ").joinToString(" ") {it.capitalize()}.trimEnd()
     fun calculateSumOfMoney() : Double {
         var doubleCal = 0.0
