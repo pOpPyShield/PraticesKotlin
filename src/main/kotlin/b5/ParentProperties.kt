@@ -1,5 +1,10 @@
 package b5
 
-class ParentProperties {
-
+interface ParentProperties {
+    val name : String?
+    val yearOfBirth : Int?
+    val degree : String?
+    fun input()
+    fun operation()
+    fun calculateMoney() : Double?
 }
