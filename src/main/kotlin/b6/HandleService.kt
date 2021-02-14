@@ -35,6 +35,11 @@ open class HandleService(serviceListPara : MutableList<Service>) : NameOfOperati
             }
         }
     }
+    fun seeNameService() {
+        for(i in 0 until serviceList.size) {
+            println("${i + 1}. ${serviceList[i].getNameService()}")
+        }
+    }
     fun chooseService() : Int {
         var choosing : Int?
         var numEle : Int = -1

@@ -4,31 +4,19 @@ import NameOfOperation.NameOfOperation
 import operationAndInput.OperationAndInput
 
 class Service(nameServicez: String?, moneyz: Double?, amountz: Int ) : NameOfOperation(nameOfOperation = "Service information"), OperationAndInput {
-    private var nameService : String? = nameServicez
-    private var money : Double? = moneyz
-    private var amount : Int = amountz
+    private var nameService: String? = nameServicez
+    private var money: Double? = moneyz
+    private var amount: Int = amountz
 
-    constructor() :this("", null, 0)
+    constructor() : this("", null, 0)
+
     override fun operation() {
-        var inp : String?
-        operation@while(true) {
-            if(input() == 1) {
-                println("Enter information for service success!!")
-                println("Do you want to check again?y(yes) to see or n(no) to quit")
-                inp = readLine()?.toString()?.toUpperCase()?.trim()
-                if(inp == "Y" || inp =="YES") {
-                    informationOfService()
-                    println("Quit!")
-                    break@operation
-                } else {
-                    println("Thanks! :D ")
-                    break@operation
-                }
-            } else {
-                break@operation
-            }
+        if(input() == 1) {
+            informationOfService()
         }
     }
+
+
 
     override fun input() : Int {
         println(nameOfOperationInside)
@@ -95,9 +83,9 @@ class Service(nameServicez: String?, moneyz: Double?, amountz: Int ) : NameOfOpe
     fun updateAmountService(amountOfUpdate : Int) : Int {
         return if(amount >= amountOfUpdate) {
             amount -= amountOfUpdate
-            0
-        } else {
             1
+        } else {
+            0
         }
     }
 }

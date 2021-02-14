@@ -3,11 +3,11 @@ package b6
 import NameOfOperation.NameOfOperation
 import operationAndInput.OperationAndInput
 
-class Customer(nameOfCustomer : String?,
-               ageOfCustomer : Int?,
-               homeTown : String?,
-               listOfServiceCustomer : MutableList<Service>,
-               listOfServiceServer : MutableList<Service>
+class Customer(nameOfCustomer : String? = "",
+               ageOfCustomer : Int? = 0,
+               homeTown : String? = "",
+               listOfServiceCustomer : MutableList<Service> = mutableListOf(),
+               listOfServiceServer : MutableList<Service> = mutableListOf(),
                ) :
     NameOfOperation("Enter information for customer"), OperationAndInput {
 
@@ -18,6 +18,7 @@ class Customer(nameOfCustomer : String?,
         private var listOfServiceOfCustomer = HandleService(listOfServiceServer)
         //Constructor no para
         constructor() : this("", 0,"", mutableListOf(), mutableListOf())
+
     override fun operation() {
             println(nameOfOperationInside)
             if(input() == 1) {
@@ -134,6 +135,14 @@ class Customer(nameOfCustomer : String?,
                                         listOfServiceOfCustomer1.getServiceList().forEachIndexed { index, service -> println("${index + 1}. ${service.getNameService()} have money ${service.getMoneyService()}") }
                                         println("Calculate the money in your list service you have choose")
                                         println("The sum: ${calculateSumOfMoney()}")
+                                        println("Do you want to choose or quit? y(yes) to continue, or n(no) for quit")
+                                        val choosingAgain = readLine()?.toUpperCase()?.trim()
+                                        if(choosingAgain == "Y" || choosingAgain == "YES") {
+                                            continue@choosingService
+                                        } else {
+                                            println("Thanks for visiting")
+                                            break@chooseServiceForCustomer
+                                        }
                                     }
                                 } else {
                                     continue@choosingService

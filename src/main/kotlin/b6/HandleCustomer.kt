@@ -37,13 +37,7 @@ class HandleCustomer {
         }
         return isIn
     }
-    fun sortedArrCustomer() : Int{
-        return if(arrCustomer.size > 0) {
-            arrCustomer.sortBy { it.calculateSumOfMoney() }
-            0
-        } else {
-            println("Don't have any service to arrange")
-            1
-        }
+    fun getSize() : Int {
+        return arrCustomer.size
     }
 }
