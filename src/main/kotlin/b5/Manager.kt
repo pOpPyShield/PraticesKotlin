@@ -1,5 +1,7 @@
 package b5
 
+import RunApplication.capitalizeFirstLetter
+
 class Manager(override val name: String?= "",
               override val yearOfBirth: Int? = 0,
               override val degree: String? = "",
@@ -10,15 +12,98 @@ class Manager(override val name: String?= "",
                 private var degreez = degree
                 private var daysWorkingz = daysWorking
                 private var levelSalaryz = levelSalary
-    override fun input() {
-        TODO("Not yet implemented")
+    override fun input() : Int {
+        outLoop@while(true) {
+            println("Scientist area")
+            name@while(true) {
+                println("Enter name: ")
+                val name1 = readLine()?.capitalizeFirstLetter()
+                if (name1.isNullOrEmpty()) {
+                    println("Name can not be null or different format :D")
+                    continue@name
+                } else {
+                    namez = name1
+                    break@name
+                }
+            }
+            yearOfBirth@while(true) {
+                println("Enter year of birth(between 1 - 98): ")
+                val yearOfBirth = readLine()?.toIntOrNull()
+                if (yearOfBirth != null) {
+                    if (yearOfBirth in 1..98) {
+                        yearOfBirthz = yearOfBirth
+                        break@yearOfBirth
+                    } else {
+                        println("It not in range, try again")
+                        continue@yearOfBirth
+                    }
+                } else {
+                    println("Wrong format, try again")
+                    continue@yearOfBirth
+                }
+            }
+            degree@while(true) {
+                println("Enter degree of scientist: ")
+                val degree = readLine()?.capitalizeFirstLetter()
+                if(degree.isNullOrEmpty()) {
+                    println("Degree can not be empty or different format")
+                    continue@degree
+                } else {
+                    degreez = degree
+                    break@degree
+                }
+            }
+
+            daysWorking@while(true) {
+                println("The day working of scientist: ")
+                val daysWorking = readLine()?.toIntOrNull()
+                if(daysWorking != null) {
+                    if(daysWorking > 0) {
+                        daysWorkingz = daysWorking
+                        break@daysWorking
+                    } else {
+                        println("The days working can not small than 0")
+                        continue@daysWorking
+                    }
+                } else {
+                    println("The days working is wrong format, try again")
+                    continue@daysWorking
+                }
+            }
+            levelSalary@while(true) {
+                println("The level salary of scientist: ")
+                val levelSalary = readLine()?.toDoubleOrNull()
+                if(levelSalary != null) {
+                    if(levelSalary > 0.0) {
+                        levelSalaryz = levelSalary
+                        break@levelSalary
+                    } else {
+                        println("The level salary can not be small than 0, try again")
+                        continue@levelSalary
+                    }
+                } else {
+                    println("The level salary is in wrong format")
+                    continue@levelSalary
+                }
+            }
+            break
+        }
+        return 1
     }
 
     override fun operation() {
-        TODO("Not yet implemented")
+        while(true){
+            if(input() == 1) {
+                break
+            }
+        }
     }
 
     override fun calculateMoney(): Double? {
-        TODO("Not yet implemented")
+        return daysWorkingz?.times(levelSalaryz!!)
+    }
+
+    override fun getNameOfOperationInsidezzzz(): String {
+        return "Manager"
     }
 }

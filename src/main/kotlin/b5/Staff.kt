@@ -7,11 +7,7 @@ class Staff(override val name: String?="", override val yearOfBirth: Int?=0, ove
     private var yearOfBirthz = yearOfBirth
     private var degreez = degree
     private var salaryInMonthz = salaryInMonth
-    override fun input() {
-        input()
-    }
-
-    override fun operation() {
+    override fun input() : Int{
         while(true) {
             println("Staff area")
             while(true) {
@@ -68,11 +64,25 @@ class Staff(override val name: String?="", override val yearOfBirth: Int?=0, ove
                     continue
                 }
             }
+            break
+        }
+        return 1
+    }
+
+    override fun operation() {
+        while(true) {
+            if(input() == 1) {
+                break
+            }
         }
     }
 
     override fun calculateMoney(): Double? {
         return salaryInMonthz
+    }
+
+    override fun getNameOfOperationInsidezzzz() : String{
+        return "Staff"
     }
 
 }

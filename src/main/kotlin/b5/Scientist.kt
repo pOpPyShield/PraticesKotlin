@@ -12,7 +12,7 @@ class Scientist(override val name: String? = "",
                      private var thePaperPublicz = thePaperPublic
                      private var daysWorkingz = daysWorking
                      private var levelSalaryz = levelSalary
-    override fun input() {
+    override fun input() : Int {
         outLoop@while(true) {
             println("Scientist area")
             name@while(true) {
@@ -101,17 +101,25 @@ class Scientist(override val name: String? = "",
                     continue@levelSalary
                 }
             }
+            break
         }
+        return 1
     }
 
     override fun operation() {
-        input()
+        while(true) {
+            if(input() == 1) {
+                break
+            }
+        }
     }
 
     override fun calculateMoney(): Double? {
-        var total : Double?
-        total = this.daysWorkingz?.times(this.levelSalaryz!!)
-        return total
+        return daysWorkingz?.times(levelSalaryz!!)
+    }
+
+    override fun getNameOfOperationInsidezzzz() : String{
+        return "Scientist"
     }
     fun String.capitalizeFirstLetter() = this.split(" ").joinToString(" ") {it.capitalize()}.trimEnd()
 }
